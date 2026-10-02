@@ -1,0 +1,58 @@
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  overflow: clip;
+}
+
+.hero-signal {
+  --hero-signal-dot: color-mix(in srgb, var(--accent) 72%, var(--text));
+  --hero-signal-radius: 24rem;
+
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.72;
+  contain: layout paint;
+}
+
+:root[data-theme="light"] .hero-signal {
+  --hero-signal-dot: color-mix(in srgb, var(--accent) 80%, var(--brand-strong));
+
+  opacity: 0.5;
+}
+
+.hero-signal__dot {
+  position: absolute;
+  left: var(--dot-x);
+  top: var(--dot-y);
+  width: 3px;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--hero-signal-dot);
+  opacity: 0;
+  transform: translate3d(var(--noise-x), var(--noise-y), 0);
+  will-change: transform, opacity;
+}
+
+.home-hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 760px) {
+  .hero-signal {
+    opacity: 0.34;
+  }
+
+  .hero-signal__dot {
+    width: 2.5px;
+    height: 2.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-signal__dot {
+    will-change: auto;
+  }
+}

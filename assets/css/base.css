@@ -1,0 +1,281 @@
+:root,
+:root[data-theme="dark"] {
+  --site-header-height: 76px;
+  --site-header-offset: var(--wp-admin--admin-bar--height, 0px);
+
+  --charcoal: #1f1f1f;
+  --off-white: #f9f9f9;
+
+  --primary-700: #15244c;
+  --primary-600: #2d3e73;
+  --primary-500: #57658f;
+  --primary-400: #818bab;
+  --primary-300: #abb2c7;
+  --primary-200: #d5d8e3;
+  --primary-100: #f4f5f8;
+
+  --secondary-a-700: #225982;
+  --secondary-a-600: #3f76a6;
+  --secondary-a-500: #6591b8;
+  --secondary-a-400: #8cadca;
+  --secondary-a-300: #b2c8db;
+  --secondary-a-200: #d9e4ed;
+  --secondary-a-100: #f5f8fb;
+
+  --secondary-b-700: #258e8b;
+  --secondary-b-600: #50bfbf;
+  --secondary-b-500: #73cccc;
+  --secondary-b-400: #96d9d9;
+  --secondary-b-300: #b9e5e5;
+  --secondary-b-200: #dcf2f2;
+  --secondary-b-100: #f6fcfc;
+
+  --secondary-c-700: #0c665b;
+  --secondary-c-600: #148c80;
+  --secondary-c-500: #43a399;
+  --secondary-c-400: #72bab3;
+  --secondary-c-300: #a1d1cc;
+  --secondary-c-200: #d0e8e6;
+  --secondary-c-100: #f3f9f9;
+
+  --error-700: #ec2d30;
+  --error-600: #f64c4c;
+  --error-500: #f87070;
+  --error-400: #fa9494;
+  --error-300: #fbb7b7;
+  --error-200: #fddddb;
+  --error-100: #fff6f6;
+
+  --warning-700: #fe9b0e;
+  --warning-600: #ffad0d;
+  --warning-500: #ffbd3d;
+  --warning-400: #ffce6e;
+  --warning-300: #ffde9e;
+  --warning-200: #ffefcf;
+  --warning-100: #fffbf3;
+
+  --success-700: #0c9d61;
+  --success-600: #47b881;
+  --success-500: #6cc69a;
+  --success-400: #91d4b3;
+  --success-300: #b5e3cd;
+  --success-200: #daf1e6;
+  --success-100: #f6fbf9;
+
+  --info-700: #3a70e2;
+  --info-600: #3b82f6;
+  --info-500: #629bf8;
+  --info-400: #89b4fa;
+  --info-300: #b1cdfb;
+  --info-200: #d8e6fd;
+  --info-100: #f5f9ff;
+
+  --neutral-700: #141414;
+  --neutral-600: #1f1f1f;
+  --neutral-500: #4c4c4c;
+  --neutral-400: #797979;
+  --neutral-300: #a5a5a5;
+  --neutral-200: #d2d2d2;
+  --neutral-100: #f4f4f4;
+
+  --bg: var(--primary-700);
+  --bg-subtle: var(--primary-600);
+  --surface: var(--primary-600);
+  --surface-elevated: var(--primary-500);
+  --surface-muted: var(--primary-500);
+
+  --text: var(--off-white);
+  --text-muted: var(--primary-200);
+  --text-soft: var(--primary-300);
+
+  --border: rgba(213, 216, 227, 0.2);
+  --border-subtle: rgba(213, 216, 227, 0.12);
+
+  --brand: var(--primary-200);
+  --brand-strong: var(--off-white);
+  --brand-soft: rgba(213, 216, 227, 0.12);
+
+  --accent: var(--secondary-b-600);
+  --accent-hover: var(--secondary-b-300);
+  --accent-soft: rgba(80, 191, 191, 0.16);
+  --chip-accent: var(--secondary-b-300);
+
+  --wave-blue-light: var(--secondary-a-300);
+  --wave-blue-dark: var(--primary-700);
+  --wave-blue-mid: var(--secondary-a-600);
+  --wave-turquoise: var(--secondary-b-600);
+  --wave-turquoise-light: var(--secondary-b-300);
+
+  --focus: var(--info-400);
+
+  --success: var(--success-600);
+  --success-soft: rgba(71, 184, 129, 0.16);
+
+  --warning: var(--warning-600);
+  --warning-soft: rgba(255, 173, 13, 0.16);
+
+  --error: var(--error-600);
+  --error-soft: rgba(246, 76, 76, 0.16);
+
+  --info: var(--info-600);
+  --info-soft: rgba(59, 130, 246, 0.16);
+
+  --shadow-soft: 0 16px 40px rgba(9, 16, 36, 0.18);
+  --shadow-card: 0 12px 30px rgba(9, 16, 36, 0.16);
+
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  --transition-fast: 160ms ease;
+  --transition-base: 240ms ease;
+  --transition-slow: 360ms ease;
+}
+
+:root[data-theme="light"] {
+  --bg: var(--off-white);
+  --bg-subtle: var(--primary-100);
+  --surface: var(--secondary-a-200);
+  --surface-elevated: var(--off-white);
+  --surface-muted: var(--primary-100);
+
+  --text: var(--neutral-700);
+  --text-muted: var(--neutral-500);
+  --text-soft: var(--neutral-400);
+
+  --border: var(--neutral-200);
+  --border-subtle: var(--primary-200);
+
+  --brand: var(--primary-600);
+  --brand-strong: var(--primary-700);
+  --brand-soft: var(--primary-200);
+
+  --accent: var(--secondary-c-600);
+  --accent-hover: var(--secondary-c-700);
+  --accent-soft: var(--secondary-c-200);
+  --chip-accent: var(--secondary-c-600);
+
+  --wave-blue-light: var(--info-500);
+  --wave-blue-dark: var(--primary-700);
+  --wave-blue-mid: var(--secondary-a-600);
+  --wave-turquoise: var(--secondary-c-600);
+  --wave-turquoise-light: var(--secondary-c-400);
+
+  --focus: var(--info-500);
+
+  --success: var(--success-600);
+  --success-soft: var(--success-200);
+
+  --warning: var(--warning-600);
+  --warning-soft: var(--warning-200);
+
+  --error: var(--error-600);
+  --error-soft: var(--error-200);
+
+  --info: var(--info-600);
+  --info-soft: var(--info-200);
+
+  --shadow-soft: 0 16px 40px rgba(17, 17, 17, 0.06);
+  --shadow-card: 0 12px 30px rgba(17, 17, 17, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  padding-top: var(--site-header-height);
+  overflow-x: hidden;
+  overflow-x: clip;
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition:
+    background var(--transition-slow),
+    color var(--transition-base);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-main [id] {
+  scroll-margin-top: calc(
+    var(--site-header-height) + var(--site-header-offset) + 24px
+  );
+}
+
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.material-symbols-rounded {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 500,
+    "GRAD" 0,
+    "opsz" 24;
+  line-height: 1;
+}
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.site-main {
+  padding-bottom: var(--space-9);
+}
