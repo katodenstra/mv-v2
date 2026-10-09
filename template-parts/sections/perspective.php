@@ -76,8 +76,8 @@ $perspective_items = array(
             </div>
 
             <?php if (file_exists($svg_path)): ?>
-              <div class="perspective-card__art" aria-hidden="true" data-perspective-art>
-                <?php echo file_get_contents($svg_path); ?>
+              <div class="perspective-card__art" aria-hidden="true">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/svg/perspective-' . $item['slug'] . '.svg'); ?>" alt="" width="600" height="600" loading="lazy" decoding="async">
               </div>
             <?php endif; ?>
           </article>

@@ -854,85 +854,6 @@ const initPerspectiveStack = () => {
     return safeValue * safeValue * (3 - 2 * safeValue);
   };
 
-  const removeSvgAnimation = (card) => {
-    card
-      .querySelectorAll("animate, animateTransform, animateMotion, set")
-      .forEach((node) => node.remove());
-  };
-
-  const getArtworkSvg = (card) =>
-    card.querySelector("[data-perspective-art] svg");
-
-  const pauseArtwork = (card, reset = false) => {
-    const svg = getArtworkSvg(card);
-
-    if (!svg || !svg.setCurrentTime || !svg.pauseAnimations) return;
-
-    try {
-      if (reset) {
-        svg.setCurrentTime(0);
-      }
-
-      svg.pauseAnimations();
-    } catch (error) {
-      return;
-    }
-  };
-
-  const playArtwork = (card) => {
-    const svg = getArtworkSvg(card);
-
-    if (!svg || !svg.setCurrentTime || !svg.unpauseAnimations) return;
-
-    try {
-      svg.unpauseAnimations();
-    } catch (error) {
-      return;
-    }
-  };
-
-  const isCardVisible = (card) => {
-    const rect = card.getBoundingClientRect();
-
-    return rect.bottom > 0 && rect.top < window.innerHeight;
-  };
-
-  const prepareArtwork = () => {
-    cards.forEach((card) => {
-      const artwork = card.querySelector("[data-perspective-art]");
-
-      if (artwork && !artwork.dataset.originalSvg) {
-        artwork.dataset.originalSvg = artwork.innerHTML;
-      }
-
-      if (reduceMotion.matches) {
-        removeSvgAnimation(card);
-        return;
-      }
-
-      if (artwork && artwork.dataset.originalSvg) {
-        artwork.innerHTML = artwork.dataset.originalSvg;
-      }
-
-      pauseArtwork(card, true);
-    });
-  };
-
-  const updateArtworkPlayback = () => {
-    if (reduceMotion.matches) {
-      cards.forEach(removeSvgAnimation);
-      return;
-    }
-
-    cards.forEach((card) => {
-      if (isCardVisible(card)) {
-        playArtwork(card);
-      } else {
-        pauseArtwork(card);
-      }
-    });
-  };
-
   const measure = () => {
     const rect = stack.getBoundingClientRect();
     sectionTop = window.scrollY + rect.top;
@@ -944,8 +865,6 @@ const initPerspectiveStack = () => {
       card.style.opacity = "";
       card.style.transform = "";
     });
-
-    updateArtworkPlayback();
   };
 
   const update = () => {
@@ -972,11 +891,7 @@ const initPerspectiveStack = () => {
 
       card.style.opacity = opacity.toFixed(3);
       card.style.transform = `translate3d(0, ${entryY + settledY}px, 0) scale(${scale.toFixed(3)})`;
-
-      if (cardProgress <= 0.02) pauseArtwork(card);
     });
-
-    updateArtworkPlayback();
   };
 
   const requestUpdate = () => {
@@ -996,7 +911,6 @@ const initPerspectiveStack = () => {
     }
   };
 
-  prepareArtwork();
   measure();
   update();
 
@@ -1007,7 +921,6 @@ const initPerspectiveStack = () => {
   });
 
   watchMediaQuery(reduceMotion, () => {
-    prepareArtwork();
     measure();
     requestUpdate();
   });
