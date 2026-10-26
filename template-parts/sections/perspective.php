@@ -28,6 +28,7 @@ $perspective_items = array(
         'slug' => 'organizational',
         'eyebrow' => '05',
         'title' => 'Organizational alignment',
+        'image_url' => 'https://mvillada.com/wp-content/uploads/2026/10/organizational-alignment.svg',
         'copy' => 'More recent consulting work has centered on rebuilding digital platforms, aligning executive stakeholders, navigating multilingual strategies, balancing regional requirements, and making technical decisions under real-world constraints.',
     ),
     array(
@@ -63,7 +64,10 @@ $perspective_items = array(
     <div class="container perspective-stack__sticky">
       <div class="perspective-stack__cards" aria-label="Kinds of complexity that shaped my perspective">
         <?php foreach ($perspective_items as $index => $item): ?>
-          <?php $svg_path = get_template_directory() . '/assets/svg/perspective-' . $item['slug'] . '.svg'; ?>
+          <?php
+          $svg_path = get_template_directory() . '/assets/svg/perspective-' . $item['slug'] . '.svg';
+          $image_url = $item['image_url'] ?? (file_exists($svg_path) ? get_template_directory_uri() . '/assets/svg/perspective-' . $item['slug'] . '.svg' : '');
+          ?>
           <article
             class="perspective-card"
             style="--perspective-card-index: <?php echo esc_attr((string) $index); ?>;"
@@ -75,9 +79,9 @@ $perspective_items = array(
               <p><?php echo esc_html($item['copy']); ?></p>
             </div>
 
-            <?php if (file_exists($svg_path)): ?>
+            <?php if ($image_url): ?>
               <div class="perspective-card__art" aria-hidden="true">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/svg/perspective-' . $item['slug'] . '.svg'); ?>" alt="" width="600" height="600" loading="lazy" decoding="async">
+                <img src="<?php echo esc_url($image_url); ?>" alt="" width="600" height="600" loading="lazy" decoding="async">
               </div>
             <?php endif; ?>
           </article>
