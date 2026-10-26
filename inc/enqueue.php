@@ -1,6 +1,9 @@
 <?php
 
 function mvillada_portfolio_enqueue_assets() {
+    if (is_page('contact') || is_page_template('page-contact.php')) {
+        wp_enqueue_style('mvillada-contact', get_template_directory_uri() . '/assets/css/contact.css', array('mvillada-portfolio-utilities'), filemtime(get_template_directory() . '/assets/css/contact.css'));
+    }
     $base_css_path = get_template_directory() . '/assets/css/base.css';
     $components_css_path = get_template_directory() . '/assets/css/components.css';
     $utilities_css_path = get_template_directory() . '/assets/css/utilities.css';

@@ -1,0 +1,75 @@
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: var(--space-8);
+  align-items: start;
+}
+.contact-intro h1 {
+  margin: 0 0 var(--space-5);
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+.contact-intro p { max-width: 42ch; }
+.contact-intro .contact-lead { color: var(--text); font-size: 1.375rem; }
+.contact-intro .contact-alternative { margin-top: var(--space-7); }
+.contact-section a { text-underline-offset: 0.2em; }
+.contact-panel {
+  min-width: 0;
+  padding: clamp(var(--space-5), 4vw, var(--space-7));
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.contact-panel h2 { font-size: 1.5rem; letter-spacing: -0.025em; }
+.contact-form { margin-top: var(--space-6); }
+.contact-form .fluentform .ff-el-group { margin-bottom: var(--space-5); }
+.contact-form .fluentform .ff-el-input--label label { color: var(--text); font-weight: 600; }
+.contact-form .fluentform .ff-el-form-control {
+  width: 100%;
+  min-height: 48px;
+  padding: var(--space-3) var(--space-4);
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--text-soft);
+  border-radius: var(--radius-sm);
+}
+.contact-form .fluentform textarea.ff-el-form-control { min-height: 160px; resize: vertical; }
+.contact-form .fluentform .ff-el-form-control::placeholder { color: var(--text-soft); opacity: 1; }
+.contact-form .fluentform .ff-el-form-control:focus {
+  border-color: var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+.contact-form .fluentform form .ff-btn-submit:not(.ff_btn_no_style) {
+  min-height: 48px;
+  padding: var(--space-3) var(--space-5);
+  font: inherit;
+  font-weight: 600;
+  background: var(--text);
+  color: var(--bg);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+}
+.contact-form .fluentform .ff-btn-submit:hover { opacity: 0.85; }
+.contact-form .fluentform .ff-btn-submit:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.contact-form .fluentform .ff-btn-submit:disabled { opacity: 0.6; cursor: wait; }
+.contact-form .fluentform .error { color: var(--text); }
+.contact-form .ff-message-success,
+.contact-form .ff-errors-in-stack {
+  padding: var(--space-4);
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--text-soft);
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+}
+.contact-panel .contact-privacy { margin: var(--space-5) 0 0; font-size: 0.875rem; }
+@media (max-width: 767px) {
+  .contact-layout { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+  .contact-section { padding-top: var(--space-7); }
+  .contact-intro .contact-alternative { margin-top: var(--space-5); }
+  .contact-form .fluentform .ff-btn-submit { width: 100%; }
+}

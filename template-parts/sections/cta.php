@@ -7,7 +7,7 @@
     </p>
 
     <div class="hero-actions">
-      <a class="button button--primary" href="mailto:mauricio.villada@icloud.com">Let’s talk</a>
+      <a class="button button--primary" href="<?php echo esc_url(home_url('/contact/')); ?>">Let’s talk</a>
     </div>
   </div>
 </section>

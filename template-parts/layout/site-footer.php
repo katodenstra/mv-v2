@@ -6,7 +6,7 @@
     </div>
 
     <address class="site-footer__contact">
-      <a href="mailto:mauricio.villada@icloud.com">mauricio.villada@icloud.com</a>
+      <a href="<?php echo esc_url(home_url('/contact/')); ?>">Let’s talk</a>
       <a href="https://www.linkedin.com/in/mauricio-villada-ruiz-31a336a0/">LinkedIn</a>
     </address>
   </div>

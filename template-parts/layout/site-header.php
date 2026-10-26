@@ -6,7 +6,7 @@ $is_home = is_front_page();
 $work_url = $is_home ? '#work' : $home_url . '#work';
 $stories_url = $is_home ? '#engineering-stories' : $home_url . '#engineering-stories';
 $approach_url = $is_home ? '#approach' : $home_url . '#approach';
-$contact_url = $is_home ? '#contact' : $home_url . '#contact';
+$contact_url = home_url('/contact/');
 $current_post_id = is_singular('case_study') ? get_queried_object_id() : 0;
 ?>
 
@@ -95,7 +95,7 @@ $current_post_id = is_singular('case_study') ? get_queried_object_id() : 0;
         </li>
 
         <li class="site-nav__item">
-          <a href="<?php echo esc_url($contact_url); ?>">Contact</a>
+          <a href="<?php echo esc_url($contact_url); ?>" <?php echo is_page('contact') ? 'aria-current="page"' : ''; ?>>Let’s talk</a>
         </li>
       </ul>
     </nav>
