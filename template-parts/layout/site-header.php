@@ -13,7 +13,10 @@ $current_post_id = is_singular('case_study') ? get_queried_object_id() : 0;
 <header class="site-header" data-site-header>
   <div class="container site-header__inner">
     <a class="site-logo" href="<?php echo esc_url($home_url); ?>" aria-label="Go to homepage">
-      <span class="site-logo__mark">MV</span>
+      <span class="site-logo__mark">
+        <img class="site-logo__image site-logo__image--dark" src="<?php echo esc_url(get_template_directory_uri() . '/assets/logo-mv.png'); ?>" alt="" width="1812" height="868" decoding="async">
+        <img class="site-logo__image site-logo__image--light" src="<?php echo esc_url(get_template_directory_uri() . '/assets/logo-mv-light.png'); ?>" alt="" width="1688" height="932" decoding="async">
+      </span>
       <span class="site-logo__text"><?php bloginfo('name'); ?></span>
     </a>
 
